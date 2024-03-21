@@ -1,12 +1,10 @@
-# S48_RajKumar_Capstone_Paperado
+# Paperado: Where Origami Comes Alive
 
-**Paperado: Where Origami Comes Alive**
-
-**Welcome to Paperado!**
+## Welcome to Paperado!
 
 Paperado is your one-stop destination for all things origami! I am passionate about the art of origami and believe it's a fun and rewarding activity for everyone. Here, you can upload your origami creation and share folding instructions as well.
 
-**What Paperado Offers:**
+## What Paperado Offers:
 
 ***Share Your Origami Creations***: Upload video of you doing origami models, add descriptions, and inspire others.
 
@@ -15,7 +13,7 @@ Paperado is your one-stop destination for all things origami! I am passionate ab
 ***Discover New Ideas***: Browse through a diverse range of origami models and get inspired to create your own masterpieces.
 
 
-**Getting Started on Paperado:**
+## Getting Started on Paperado:
 
 ***Sign Up***: Create a free account to unlock all the features Paperado offers.
 
