@@ -1,7 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const Joi = require('joi');
 require("dotenv").config();
+const { LoginModel, addLogin, SignupModel, addSignup } = require('./model/user');
 const port = process.env.PUBLIC_PORT || 3000;
 const mongobduri = process.env.MONGODB_URI;
 
@@ -22,3 +24,41 @@ mongoose.connect(mongobduri)
     )
   )
   .catch((error) => console.error("Error connecting to MongoDB:", error));
+
+app.post("/api/signup", async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
+    
+    const { error } = addSignup.validate({ username, email, password });  // Validate request body using Joi
+    if (error) {
+      return res.status(400).send(error.details[0].message);
+    }
+    
+    const signcheck = await SignupModel.findOne({ username });   // Check if the username already exists
+    if (signcheck) {
+      return res.status(400).json({
+        success: false,
+        message: "Username already exists",
+      });
+    }
+    
+    const List = new SignupModel({     // Create a new user
+      username,
+      email,
+      password,
+    });
+    await List.save();
+    
+    res.json({
+      success: true,
+      message: "User created successfully",
+      user: List,
+      });
+    } catch (error) {
+      console.error("Error creating user:", error);       // Handle any unexpected errors
+      res.status(500).json({
+        success: false,
+        message: "An error occurred while creating the user",
+      });
+  }
+});
