@@ -62,3 +62,22 @@ app.post("/api/signup", async (req, res) => {
       });
   }
 });
+
+app.post("/api/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const { error } = addLogin.validate({ username, password });        // Validate request body
+    if (error) {
+      return res.status(400).json({ success: false, message: error.details[0].message });
+    }
+
+    const user = await SignupModel.findOne({ username });           // Find user by username in signup database
+    if (!user) {
+      return res.status(400).json({ success: false, message: "Invalid credentials" });
+    }
+  } catch (error) {
+    console.error("Error during login:", error);
+    res.status(500).json({ success: false, message: "Internal Server Error" });
+  }
+});
