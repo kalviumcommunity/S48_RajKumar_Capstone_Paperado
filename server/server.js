@@ -73,6 +73,7 @@ app.post("/api/login", async (req, res) => {
     }
 
     const user = await SignupModel.findOne({ username });           // Find user by username in signup database
+    
     if (!user) {
       return res.status(400).json({ success: false, message: "Invalid credentials" });
     }
