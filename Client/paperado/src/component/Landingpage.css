@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+p{
+  font-family: "Salsa", cursive;
+  font-weight: 100px;
+}
+
+li {
+  display: inline-block;
+  margin-right: 30px;
+}
+.flex{
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  background-color: #222684;
+  color: white;
+  margin-right: 15px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login:hover {
+  background-color: #3b3d85;
+}
+
+.create{
+  text-align: center;
+}
+.started{
+  text-align: center;
+}
+.signup {
+  background-color: #222684;
+  color: white;
+  margin-right: 15px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signup:hover {
+  background-color: #3b3d85;
+}
