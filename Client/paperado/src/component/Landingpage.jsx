@@ -2,6 +2,8 @@
 import { Link } from 'react-router-dom'
 import './Landingpage.css'
 import butterfly from '../assets/butterfly.jpeg'
+import insta from '../assets/insta.jpeg'
+import github from '../assets/github.png'
 
 export default function Landingpage() {
   return (
@@ -51,6 +53,17 @@ export default function Landingpage() {
           <p></p>
         </div>
       </div>
+      <div className='contact'>
+        <p className='contactus'>Contact Us</p>
+        <div className='logo'>
+          <img src={insta} alt="" />
+          <img src={github} alt="" />
+        </div>
+      </div>
+      <hr />
+      <footer>
+        <p className='footer'>Copyright © 2024  Paperado - All Rights Reserved - </p>
+      </footer>
     </div>
   )
 }
