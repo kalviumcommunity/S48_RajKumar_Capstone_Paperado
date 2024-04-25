@@ -23,9 +23,6 @@ export default function Landingpage() {
       </nav>
       <div className='desc'>
         <h1 className='create'>Unleash Your Creativity <br /> with Origami</h1>
-        <div className='started' >
-          <Link to="/" className="signup">Get Started</Link>
-          </div >
           <div className='paradec'>
             <p>“Oru” in Japanese means ‘to fold’ and “Kami” in <br />
             Japanese means ‘Paper’, so it translates as <br />
@@ -37,6 +34,9 @@ export default function Landingpage() {
             <img className='image1' src={butterfly} alt="" />
           </div>
       </div>
+      <div className='started' >
+          <Link to="/" className="signup">Get Started</Link>
+          </div >
       <div className='question'>
         <div className='common-questions'>
           <p className='faq'>FAQ</p>

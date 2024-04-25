@@ -7,9 +7,10 @@ body {
 }
 
 nav {
-  background-color: #333;
+  background-color: white;
+  box-shadow: 0 0 10px 5px #EDEDED;
   height: 80px;
-  color: white;
+  color: black;
   display: flex;
   justify-content: space-between; 
   align-items: center;
@@ -53,7 +54,8 @@ li {
   text-align: center;
 }
 .started{
-  margin-top: 60px;
+  margin-top: 20px;
+  margin-bottom: 60px;
   text-align: center;
 }
 .signup {
