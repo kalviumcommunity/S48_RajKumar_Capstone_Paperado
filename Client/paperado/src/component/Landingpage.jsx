@@ -17,7 +17,7 @@ export default function Landingpage() {
             <li>FAQ</li>
         </ul>
         <div className="top-bar">
-            <Link to="/" className="login">Login</Link>
+            <Link to="/login" className="login">Login</Link>
         </div>
         </div>
       </nav>
@@ -35,7 +35,7 @@ export default function Landingpage() {
           </div>
       </div>
       <div className='started' >
-          <Link to="/" className="signup">Get Started</Link>
+          <Link to="/Signup" className="signup">Get Started</Link>
           </div >
       <div className='question'>
         <div className='common-questions'>
