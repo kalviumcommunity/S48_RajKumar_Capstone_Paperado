@@ -1,0 +1,10 @@
+body{
+    background-image: linear-gradient(to bottom right, #FFFFFF, #BBD2E1, #5D95B8);
+    background-repeat: no-repeat;
+}
+
+.page{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
