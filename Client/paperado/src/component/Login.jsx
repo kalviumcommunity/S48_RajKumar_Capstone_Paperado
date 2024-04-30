@@ -34,6 +34,7 @@ const Login = () => {
   };
 
   return (
+    <>
     <div className="page">
       <h2>Log into your account</h2>
       <input
@@ -52,6 +53,7 @@ const Login = () => {
       <br />
       <button onClick={handleLogin}>Login</button>
     </div>
+    </>
   );
 };
 
