@@ -4,13 +4,11 @@ import Cookies from "js-cookie"
 import { useNavigate } from "react-router-dom";
 import './Login.css'
 
-
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   
-
   const handleLogin = async () => {
     try {
       const response = await axios.post("https://anime-watch.onrender.com/api/login", {
@@ -34,26 +32,26 @@ const Login = () => {
   };
 
   return (
-    <>
     <div className="page">
-      <h2>Log into your account</h2>
-      <input
-        type="text"
-        placeholder="Enter username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <br />
-      <input
-        type="password"
-        placeholder="Enter password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
-      <button onClick={handleLogin}>Login</button>
+      <div className="login-box">
+        <h2>Log into your account</h2>
+        <input
+          type="text"
+          placeholder="Enter username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          type="password"
+          placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={handleLogin}>Login</button>
+      </div>
     </div>
-    </>
   );
 };
 
