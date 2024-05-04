@@ -1,61 +1,42 @@
 .page {
-    background-image: linear-gradient(to bottom right, #FFFFFF, #BBD2E1, #5D95B8);
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #FFFFFF, #BBD2E1, #5D95B8);
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Making sure the background covers the entire viewport height */
-    margin: 0;
-    padding: 0;
-    
-}
-
-/* Styling for the inner content */
-.page .content {
-    background-color: rgba(255, 255, 255, 0.8); /* Adding a semi-transparent white background */
+  }
+  
+  .login-box {
+    background-color: white;
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a subtle box shadow */
-    text-align: center;
-}
-
-/* Styling for the heading */
-.page .content h2 {
-    margin-bottom: 20px; /* Adding some space below the heading */
-}
-
-/* Styling for input fields */
-.page .content input {
-    width: 100%;
+    width: 30%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: 75%;
     padding: 10px;
-    margin-bottom: 10px; /* Adding space between input fields */
-    border-radius: 4px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-/* Styling for the login button */
-.page .content button {
-    width: 100%;
-    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 79%;
+    padding: 10px 20px;
     background-color: #5D95B8;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Adding a smooth transition effect */
-}
-
-/* Changing button color on hover */
-.page .content button:hover {
-    background-color: #306084;
-}
-
-/* Media query for responsiveness */
-@media (max-width: 600px) {
-    /* Adjusting styles for smaller screens */
-    .page .content {
-        width: 90%;
-    }
-}
+  }
+  
+  button:hover {
+    background-color: #3A6D8C;
+  }
+  
