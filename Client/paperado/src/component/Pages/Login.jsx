@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie"
 import { useNavigate } from "react-router-dom";
-import './Login.css'
+import '../Css/Login.css'
 
 const Login = () => {
   const [username, setUsername] = useState("");
