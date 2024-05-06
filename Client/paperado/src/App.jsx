@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route}  from 'react-router-dom';
-import PaperadoHome from './component/Landingpage';
-import Login from './component/Login';
-import SignUp from "./component/Signup";
+import PaperadoHome from './component/Pages/Landingpage';
+import Login from './component/Pages/Login';
+import SignUp from "./component/Pages/Signup";
 
 function App(){
   // const [count, setCount]=useState(0)
