@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 9px;
+    background-color: #1874ff;
+    border-radius: 5px;
+}
+
+.webname {
+    margin: 0;
+    padding: 0;
+}
