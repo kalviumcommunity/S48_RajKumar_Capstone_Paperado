@@ -6,15 +6,9 @@ const Header = () => {
     <nav className="navbar">
       <p className="webname">Paperado</p>
       <ul className="menu">
-        <li>
-          <Link to="/">Add Post</Link>
-        </li>
-        <li>
-          <Link to="/">Users</Link>
-        </li>
-        <li>
-          <Link to="/">Logout</Link>
-        </li>
+        <li><Link to="/">Add Post</Link></li>
+        <li><Link to="/">Users</Link></li>
+        <li><Link to="/">Logout</Link></li>
       </ul>
     </nav>
   );
