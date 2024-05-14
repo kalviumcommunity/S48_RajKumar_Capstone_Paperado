@@ -27,10 +27,38 @@ const LoginSchema = new mongoose.Schema({
   
 const LoginModel = mongoose.model("Login", LoginSchema);
 
+const UserSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    profilePic: {
+      type: String,
+      default: "",
+    },
+  },
+  { timestamps: true }
+);
+
+const UserModel = mongoose.model("User",UserSchema);
+
 module.exports = {
     SignupModel,
     addSignup,
     LoginModel,
     addLogin,
-    LoginSchema
+    LoginSchema,
+    UserModel,
+    UserSchema
 };
