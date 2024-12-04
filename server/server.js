@@ -25,59 +25,81 @@ mongoose.connect(mongobduri)
   )
   .catch((error) => console.error("Error connecting to MongoDB:", error));
 
-app.post("/api/signup", async (req, res) => {
-  try {
-    const { username, email, password } = req.body;
-    
-    const { error } = addSignup.validate({ username, email, password });  // Validate request body using Joi
-    if (error) {
-      return res.status(400).send(error.details[0].message);
-    }
-    
-    const signcheck = await SignupModel.findOne({ username });   // Check if the username already exists
-    if (signcheck) {
-      return res.status(400).json({
-        success: false,
-        message: "Username already exists",
+  app.post("/api/signup", async (req, res) => {
+    try {
+      const { username, email, password } = req.body;
+  
+      // Validate request body using Joi
+      const { error } = addSignup.validate({ username, email, password });
+      if (error) {
+        return res.status(400).send(error.details[0].message);
+      }
+  
+      // Check if the username already exists
+      const signcheck = await SignupModel.findOne({ username });
+      if (signcheck) {
+        return res.status(400).json({
+          success: false,
+          message: "Username already exists",
+        });
+      }
+  
+      // Create a new user
+      const signupuser = new SignupModel({
+        username,
+        email,
+        password,
       });
-    }
-    
-    const List = new SignupModel({     // Create a new user
-      username,
-      email,
-      password,
-    });
-    await List.save();
-    
-    res.json({
-      success: true,
-      message: "User created successfully",
-      user: List,
+      await signupuser.save();
+  
+      res.json({
+        success: true,
+        message: "User created successfully",
+        user: signupuser,
       });
     } catch (error) {
-      console.error("Error creating user:", error);       // Handle any unexpected errors
+      // Handle any unexpected errors
+      console.error("Error creating user:", error);
       res.status(500).json({
         success: false,
         message: "An error occurred while creating the user",
       });
-  }
-});
+    }
+  });
 
 app.post("/api/login", async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const { error } = addLogin.validate({ username, password });        // Validate request body
+    // Validate request body
+    const { error } = addLogin.validate({ username, password });
     if (error) {
       return res.status(400).json({ success: false, message: error.details[0].message });
     }
 
-    const user = await SignupModel.findOne({ username });           // Find user by username in signup database
+    // Find user by username in signup database
+    const user = await SignupModel.findOne({ username });
     if (!user) {
       return res.status(400).json({ success: false, message: "Invalid credentials" });
-    }
+    }  
+    const token = jwt.sign({ username: user.username }, secretKey)
+    // Set cookie with token
+    res.cookie("token", token, { httpOnly: true });
+
+
+    // Set cookie and respond
+    res.cookie("username", username);
+    res.json({ success: true, message: "Login successful", username,token });
+    console.log("login success", username);
   } catch (error) {
     console.error("Error during login:", error);
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
+});
+
+
+app.use((req, res) => res.status(404).send('Not found'));
+
+app.listen(PORT, () => {
+  console.log(`🚀Server is running on port ${PORT}`);
 });
