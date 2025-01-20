@@ -11,7 +11,7 @@ const Login = () => {
   
   const handleLogin = async () => {
     try {
-      const response = await axios.post("https://anime-watch.onrender.com/api/login", {
+      const response = await axios.post("http://localhost:3000/api/login", {
         username,
         password,
       });
