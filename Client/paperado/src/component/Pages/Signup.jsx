@@ -22,7 +22,7 @@ function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-        axios.post("https://anime-watch.onrender.com/api/signup", {
+        axios.post("http://localhost:3000/api/signup", {
             username: formData.UserName,
             email: formData.email,
             password: formData.password
