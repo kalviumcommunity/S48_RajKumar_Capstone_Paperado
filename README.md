@@ -24,3 +24,7 @@ Paperado is your one-stop destination for all things origami! I am passionate ab
 Backend Deploy link :
 
 https://s48-rajkumar-capstone-paperado-3.onrender.com
+
+Frontend Deploy link :
+
+https://s48-rajkumar-capstone-paperado.netlify.app/
